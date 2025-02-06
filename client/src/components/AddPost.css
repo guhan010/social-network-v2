@@ -1,0 +1,20 @@
+.thoughts-inp {
+  margin-left: 30px;
+  width: 300px;
+}
+.thoughts {
+  padding: 20px 30px;
+}
+.media-items {
+  margin-left: 25px;
+  padding: 5px 10px;
+  background-color: #eef0f2;
+  border-radius: 5px;
+  gap: 5px;
+}
+.media-items h3 {
+  font-size: 12px;
+}
+.media {
+  padding-bottom: 16px;
+}

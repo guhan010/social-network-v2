@@ -1,0 +1,89 @@
+.cover-img {
+  background-image: url("../assets/cover-img.jpg");
+}
+.about-details {
+  padding: 10px 15px 20px 15px;
+}
+.profile-img-container {
+  position: relative;
+  bottom: 23px;
+  border: 3px solid white;
+  border-radius: 7px;
+}
+.profile-img {
+  border-radius: 3px;
+}
+.personal h2 {
+  font-size: 19px;
+  color: #14191e;
+  font-weight: 700;
+}
+.personal {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e8dce0;
+}
+.personal .bio {
+  margin-top: 5px;
+  color: #937379;
+  font-size: 12px;
+}
+.personal h3 {
+  margin-top: 8px;
+  color: #937379;
+  font-size: 14px;
+  text-align: center;
+}
+.followers {
+  display: flex;
+  /* gap: 0px 20px; */
+  align-items: center;
+  padding: 10px 0px;
+}
+.follower-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: "#937379";
+}
+.follower-data h1 {
+  font-weight: bold;
+}
+.follower-data h4 {
+  color: #937379;
+  padding: 0px 12px 0px 12px;
+}
+.post-div {
+  border-right: 1px solid #e8dce0;
+}
+.post-div h1 {
+  font-size: 15px;
+}
+.post-div h4 {
+  font-size: 13px;
+}
+.pages-item {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-left: 30px;
+  gap: 0px 10px;
+  margin-top: 20px;
+}
+.pages-item h4 {
+  font-weight: bold;
+}
+.pages-item h4:hover {
+  color: #0f6fec;
+}
+.view-profile {
+  padding: 20px 10px;
+  color: #0f6fec;
+  font-weight: bold;
+}
+.view-profile:hover {
+  color: #083570;
+}
+.pages-section {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e8dce0;
+}

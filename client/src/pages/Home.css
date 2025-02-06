@@ -1,0 +1,9 @@
+.home-container {
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  grid-column-gap: 30px;
+  padding: 20px 50px;
+}
+.about {
+  max-width: 350px;
+}

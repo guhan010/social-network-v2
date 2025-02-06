@@ -1,0 +1,82 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 25px;
+  background-color: #fff;
+  font-weight: 600;
+  color: #937379;
+
+  /* z-index: 1; */
+}
+.profile {
+  display: flex;
+  gap: 0px 20px;
+  align-items: center;
+}
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 36px;
+  height: 36px;
+}
+.input-box input {
+  height: 30px;
+  width: 281px;
+  border-radius: 6px;
+  position: relative;
+}
+.input-box span {
+  position: relative;
+  left: 30px;
+  top: 6px;
+}
+.search-icon {
+  width: 20px;
+  height: 20px;
+}
+.icons-section {
+  display: flex;
+}
+.icondiv {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eef0f2;
+  border-radius: 7px;
+  margin-right: 10px;
+}
+.avatar-img {
+  border-radius: 6px;
+}
+
+.text-section {
+  display: flex;
+  justify-content: space-between;
+}
+.text-item {
+  padding: 0px 30px;
+}
+.text-item:hover {
+  color: rgb(15, 118, 241);
+}
+.notifications {
+  position: relative;
+}
+.notifications div {
+  content: " ";
+  background-color: #d6293e;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.icons:hover {
+  color: black;
+}

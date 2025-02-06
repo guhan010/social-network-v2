@@ -1,0 +1,14 @@
+.add-friend {
+  padding: 10px;
+  background-color: #d5e1f2;
+  border-radius: 50%;
+}
+.add-friend .add-icon {
+  font-weight: bold;
+}
+.profile-img .profile-details {
+  margin-left: 10px;
+}
+.friend-container {
+  padding: 10px 20px;
+}
