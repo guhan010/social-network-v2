@@ -10,7 +10,7 @@ import { IoNotifications } from "react-icons/io5";
 
 const HomeLeft = () => {
   return (
-    <div className="about-container bg-[#fff]">
+    <div className="about-container bg-[#fff] rounded-md">
       <div className="cover-img h-13"> </div>
       <div className="about-details flex items-center flex-col">
         <div className="profile-img-container">

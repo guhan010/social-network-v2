@@ -21,3 +21,21 @@
   color: #81666b;
   padding: 10px 0px;
 }
+.likes-section {
+  padding: 10px 5px;
+}
+
+.addcomment-section {
+  padding: 10px 0px;
+}
+
+.addcomment-section input {
+  /* position: relative; */
+  width: 420px;
+}
+
+.sendcomment {
+  position: relative;
+  right: 30px;
+  color: grey;
+}

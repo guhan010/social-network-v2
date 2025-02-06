@@ -1,5 +1,7 @@
 .cover-img {
   background-image: url("../assets/cover-img.jpg");
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 .about-details {
   padding: 10px 15px 20px 15px;

@@ -16,6 +16,7 @@ const Suggestions = () => {
         Who to follow
       </h1>
       <FriendSuggestion />
+      <FriendSuggestion />
     </div>
   );
 };
