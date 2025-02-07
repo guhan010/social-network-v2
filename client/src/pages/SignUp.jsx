@@ -1,7 +1,28 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { data, Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const SignUp = () => {
+  const apiUrl = import.meta.env.VITE_API_URL;
+  const navigate = useNavigate();
+
+  const [signup, setSignup] = useState({
+    email: "",
+    newPassword: "",
+    password: "",
+  });
+
+  const handleSubmit = async () => {
+    if (signup.newPassword === signup.password) {
+      const user = await axios.post(`${apiUrl}/auth/signup`, signup);
+      // console.log(user.data);
+      navigate("/home");
+    } else {
+      alert("password mismatch");
+    }
+  };
+
+  // console.log(apiUrl);
   return (
     <div
       className="signing-page flex justify-center items-center"
@@ -32,6 +53,10 @@ const SignUp = () => {
             fontSize: "15px",
             border: "1px solid lightgrey",
           }}
+          onChange={(e) => {
+            setSignup({ ...signup, email: e.target.value });
+          }}
+          value={signup.email}
         />
         <input
           type="password"
@@ -43,6 +68,10 @@ const SignUp = () => {
             fontSize: "15px",
             border: "1px solid lightgrey",
           }}
+          onChange={(e) => {
+            setSignup({ ...signup, newPassword: e.target.value });
+          }}
+          value={signup.newPassword}
         />
         <input
           type="password"
@@ -54,10 +83,13 @@ const SignUp = () => {
             fontSize: "15px",
             border: "1px solid lightgrey",
           }}
+          onChange={(e) => {
+            setSignup({ ...signup, password: e.target.value });
+          }}
+          value={signup.password}
         />
-        <input
-          type="submit"
-          value="Sign me up"
+        <button
+          type="button"
           className="rounded-sm"
           style={{
             marginTop: "15px",
@@ -68,7 +100,10 @@ const SignUp = () => {
             fontWeight: "bold",
             cursor: "pointer",
           }}
-        />
+          onClick={handleSubmit}
+        >
+          Sign me up
+        </button>
         <h4 style={{ color: "gray" }}>&copy;2025. All rights reserved </h4>
       </div>
     </div>

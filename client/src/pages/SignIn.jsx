@@ -1,7 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const SignIn = () => {
+  const navigate = useNavigate();
+  const apiURL = import.meta.env.VITE_API_URL;
+  const [login, setLogin] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleLogin = async () => {
+    const user = await axios.post(`${apiURL}/auth/login`, login);
+    if (user.data.email === login.email) {
+      navigate("/home");
+    }
+  };
+
   return (
     <div
       className="signin-page flex justify-center items-center"
@@ -32,6 +47,10 @@ const SignIn = () => {
             fontSize: "15px",
             border: "1px solid lightgrey",
           }}
+          onChange={(e) => {
+            setLogin({ ...login, email: e.target.value });
+          }}
+          value={login.email}
         />
         <input
           type="password"
@@ -43,6 +62,10 @@ const SignIn = () => {
             fontSize: "15px",
             border: "1px solid lightgrey",
           }}
+          onChange={(e) => {
+            setLogin({ ...login, password: e.target.value });
+          }}
+          value={login.password}
         />
 
         <button
@@ -57,8 +80,9 @@ const SignIn = () => {
             fontWeight: "bold",
             cursor: "pointer",
           }}
+          onClick={handleLogin}
         >
-          <Link to="/home">Login</Link>
+          Login
         </button>
         <h4 style={{ color: "gray" }}>&copy;2025. All rights reserved </h4>
       </div>
