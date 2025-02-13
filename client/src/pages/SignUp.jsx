@@ -16,9 +16,9 @@ const SignUp = () => {
     if (signup.newPassword === signup.password) {
       const user = await axios.post(`${apiUrl}/auth/signup`, signup);
       // console.log(user.data);
-      navigate("/home");
+      navigate("/signin");
     } else {
-      alert("password mismatch");
+      alert("invalid user");
     }
   };
 

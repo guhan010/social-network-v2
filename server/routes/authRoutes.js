@@ -16,7 +16,7 @@ router.post("/signup", async (req, res) => {
       data.password = hashedpass;
       const newUser = new User(data);
       const saveduser = await newUser.save();
-      res.status(201).json(saveduser);
+      res.status(201).json(saveduser._id);
     }
   } catch (error) {
     res.status(500).json(error);
@@ -37,7 +37,7 @@ router.post("/login", async (req, res) => {
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
           expiresIn: "7d",
         });
-        res.status(200).json(user);
+        res.status(200).json({ token, message: "User logged in successfully" });
       }
     }
   } catch (error) {

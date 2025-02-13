@@ -12,7 +12,10 @@ const SignIn = () => {
 
   const handleLogin = async () => {
     const user = await axios.post(`${apiURL}/auth/login`, login);
-    if (user.data.email === login.email) {
+    if (user.data.token === "") {
+      alert("invalid password");
+    } else {
+      localStorage.setItem("token", user.data.token);
       navigate("/home");
     }
   };

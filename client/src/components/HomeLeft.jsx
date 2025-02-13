@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./HomeLeft.css";
 import person from "../assets/person.jpg";
 import { FcHome } from "react-icons/fc";
@@ -7,8 +7,25 @@ import { FaEarthAmericas } from "react-icons/fa6";
 import { MdOutlineEventNote } from "react-icons/md";
 import { IoIosSettings } from "react-icons/io";
 import { IoNotifications } from "react-icons/io5";
+import { UserContext } from "../App";
 
 const HomeLeft = () => {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    role: "",
+    bio: "",
+    profilePicture: "",
+    following: [],
+    followers: [],
+    post: [],
+  });
+  const contextData = useContext(UserContext);
+  useEffect(() => {
+    contextData()
+      .then((res) => setUser(res))
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div className="about-container bg-[#fff] rounded-md">
       <div className="cover-img h-13"> </div>
@@ -17,23 +34,20 @@ const HomeLeft = () => {
           <img src={person} alt="" className="h-16 w-16 profile-img" />
         </div>
         <div className="personal flex flex-col items-center ">
-          <h2>Nitheesh CR</h2>
-          <h4 className="bio">Class Representative at 6AI1</h4>
-          <h3 className="w-50">
-            I'm cr of 6ai1. i'm happy to be a topper of my class. i'm proud to
-            be cr
-          </h3>
+          <h2>{user.name}</h2>
+          <h4 className="role">{user.role}</h4>
+          <h3 className="w-50 bio">{user.bio}</h3>
           <div className="followers">
             <div className="posts-count follower-data post-div">
-              <h1>256</h1>
+              <h1>0</h1>
               <h4>Post</h4>
             </div>
             <div className="followers-count follower-data post-div">
-              <h1>5k</h1>
+              <h1>{user.followers.length}</h1>
               <h4>Followers</h4>
             </div>
             <div className="following-count follower-data">
-              <h1>6k</h1>
+              <h1>{user.following.length}</h1>
               <h4>Following</h4>
             </div>
           </div>
